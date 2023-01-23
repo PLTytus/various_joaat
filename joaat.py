@@ -16,7 +16,7 @@ def hexToStr(h:int)->str:
 def intToStr(i:int)->str:
 	return str(hex(unsignedInt(i)))[2:].upper().rjust(8, "0")
 
-def unsignedHex(h:int)->int: # int to unsigned hex
+def unsignedHex(h:int)->int:
 	return hex(unsignedInt(h))
 
 def strToHex(s:str)->int:
