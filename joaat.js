@@ -10,6 +10,14 @@ function signedInt8(i){
 	return i | (-(i & 0x80));
 }
 
+function unsignedInt(i){
+	return i >>> 0;
+}
+
+function hex(i){
+	return i.toString(16).toUpperCase();
+}
+
 function joaat(s){
 	s = unescape(encodeURIComponent(s.toLowerCase()));
 	
@@ -25,5 +33,11 @@ function joaat(s){
 	hash = int32(hash ^ (hash >>> 11));
 	hash = int32(hash + (hash << 15));
 
-	return hash;
+	let uint = unsignedInt(hash);
+
+	return {
+		signed: hash,
+		unsigned: uint,
+		hex: hex(uint),
+	};
 }
