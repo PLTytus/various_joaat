@@ -24,7 +24,7 @@ def strToHex(s:str)->int:
 
 def joaat(s:str)->dict:
 	hash = 0
-	for c in s.strip().lower().encode("utf8"):
+	for c in s.lower().encode("utf8"):
 		hash = int32(hash + signedInt8(c))
 		hash = int32(hash + (hash << 10))
 		hash = int32(hash ^ (hash >> 6))
